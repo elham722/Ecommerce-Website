@@ -23,7 +23,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopCenter.Infrastructure",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopCenter.Persistence", "ShopCenter.Persistence\ShopCenter.Persistence.csproj", "{3CE431C8-19C6-44DC-AF88-68763C0B2CEB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopCenter.Api", "ShopCenter.Api\ShopCenter.Api.csproj", "{83F19C58-EF57-4F14-9E66-6EE8F3B464D0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopCenter.Api", "ShopCenter.Api\ShopCenter.Api.csproj", "{83F19C58-EF57-4F14-9E66-6EE8F3B464D0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopCenter.UnitTest", "ShopCenter.UnitTest\ShopCenter.UnitTest.csproj", "{A08943FA-3C0F-476F-ABC7-9CAE7494E6E9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{83F19C58-EF57-4F14-9E66-6EE8F3B464D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{83F19C58-EF57-4F14-9E66-6EE8F3B464D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{83F19C58-EF57-4F14-9E66-6EE8F3B464D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A08943FA-3C0F-476F-ABC7-9CAE7494E6E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A08943FA-3C0F-476F-ABC7-9CAE7494E6E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A08943FA-3C0F-476F-ABC7-9CAE7494E6E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A08943FA-3C0F-476F-ABC7-9CAE7494E6E9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -65,6 +71,7 @@ Global
 		{0AC82555-3ABC-40B3-8EFD-A28E1A378B2A} = {444AAA4F-AE81-4ED9-89EB-EC8307D585A5}
 		{3CE431C8-19C6-44DC-AF88-68763C0B2CEB} = {444AAA4F-AE81-4ED9-89EB-EC8307D585A5}
 		{83F19C58-EF57-4F14-9E66-6EE8F3B464D0} = {CF48CF24-C931-43A3-A90B-9CA479BE7743}
+		{A08943FA-3C0F-476F-ABC7-9CAE7494E6E9} = {8850F0F0-6BB3-464C-BB69-9CBF4D8E5837}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2190BFF3-6904-43D7-ABD8-7E7C784320B6}

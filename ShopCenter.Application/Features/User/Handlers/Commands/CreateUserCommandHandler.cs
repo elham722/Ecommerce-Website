@@ -22,11 +22,11 @@ namespace ShopCenter.Application.Features.User.Handlers.Commands
         private readonly IMapper _mapper;
         private readonly IEmailSender _emailSender;
 
-        public CreateUserCommandHandler(IUserRepository userRepository, IMapper mapper,IEmailSender emailSender)
+        public CreateUserCommandHandler(IUserRepository userRepository, IMapper mapper/*,IEmailSender emailSender*/)
         {
             _userRepository = userRepository;
             _mapper = mapper;
-            _emailSender = emailSender;
+            //_emailSender = emailSender;
         }
 
 
