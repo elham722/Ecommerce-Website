@@ -25,7 +25,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopCenter.Persistence", "S
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopCenter.Api", "ShopCenter.Api\ShopCenter.Api.csproj", "{83F19C58-EF57-4F14-9E66-6EE8F3B464D0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopCenter.UnitTest", "ShopCenter.UnitTest\ShopCenter.UnitTest.csproj", "{A08943FA-3C0F-476F-ABC7-9CAE7494E6E9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopCenter.UnitTest", "ShopCenter.UnitTest\ShopCenter.UnitTest.csproj", "{A08943FA-3C0F-476F-ABC7-9CAE7494E6E9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopCenter.MVC", "ShopCenter.MVC\ShopCenter.MVC.csproj", "{41748925-A94A-488D-AE28-8B5517AB8FCF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +59,10 @@ Global
 		{A08943FA-3C0F-476F-ABC7-9CAE7494E6E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A08943FA-3C0F-476F-ABC7-9CAE7494E6E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A08943FA-3C0F-476F-ABC7-9CAE7494E6E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{41748925-A94A-488D-AE28-8B5517AB8FCF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41748925-A94A-488D-AE28-8B5517AB8FCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41748925-A94A-488D-AE28-8B5517AB8FCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41748925-A94A-488D-AE28-8B5517AB8FCF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -72,6 +78,7 @@ Global
 		{3CE431C8-19C6-44DC-AF88-68763C0B2CEB} = {444AAA4F-AE81-4ED9-89EB-EC8307D585A5}
 		{83F19C58-EF57-4F14-9E66-6EE8F3B464D0} = {CF48CF24-C931-43A3-A90B-9CA479BE7743}
 		{A08943FA-3C0F-476F-ABC7-9CAE7494E6E9} = {8850F0F0-6BB3-464C-BB69-9CBF4D8E5837}
+		{41748925-A94A-488D-AE28-8B5517AB8FCF} = {13ADD9FF-F794-4C97-B1E9-630453E9735C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2190BFF3-6904-43D7-ABD8-7E7C784320B6}
