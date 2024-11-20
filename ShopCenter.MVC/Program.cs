@@ -1,4 +1,9 @@
+using ShopCenter.MVC.Services;
+
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddHttpClient<IClient, Client>
+    (c=> c.BaseAddress = new Uri(builder.Configuration.GetSection("ApiAddress").Value));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
