@@ -1,10 +1,16 @@
+using ShopCenter.MVC.Contracts;
 using ShopCenter.MVC.Services;
+using ShopCenter.MVC.Services.Base;
+using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddHttpClient<IClient, Client>
     (c=> c.BaseAddress = new Uri(builder.Configuration.GetSection("ApiAddress").Value));
+//builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
+
+builder.Services.AddSingleton<ILocalStorageService,LocalStorageService>();
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
