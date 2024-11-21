@@ -7,6 +7,7 @@ using ShopCenter.Application.Features.User.Handlers.Queries;
 using ShopCenter.Application.Features.User.Requests.Commands;
 using ShopCenter.Application.Features.User.Requests.Queries;
 using ShopCenter.Application.Profiles;
+using ShopCenter.Application.Responses;
 using ShopCenter.UnitTest.Mocks;
 using Shouldly;
 using System;
@@ -45,7 +46,7 @@ namespace ShopCenter.UnitTest.User.Commands
             var handler = new CreateUserCommandHandler(_mockRepository.Object, _mapper);
             var result = await handler.Handle(new CreateUserCommand() { UserDTO = _userDTO}, CancellationToken.None);
 
-            result.ShouldBeOfType<int>();
+            result.ShouldBeOfType<BaseCommandResponse>();
             var user = await _mockRepository.Object.GetAll();
             user.Count.ShouldBe(2);
 

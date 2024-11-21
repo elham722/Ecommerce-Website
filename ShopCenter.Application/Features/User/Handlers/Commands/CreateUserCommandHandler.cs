@@ -38,33 +38,33 @@ namespace ShopCenter.Application.Features.User.Handlers.Commands
 
             if (validatorResult.IsValid is false)
             {
-              //  throw new ValidationException(validatorResult);
-              respose.Success = false;
+                respose.Success = false;
                 respose.Message = "creation failesd";
-                respose.Errors=validatorResult.Errors.Select(x => x.ErrorMessage).ToList();
+                respose.Errors = validatorResult.Errors.Select(x => x.ErrorMessage).ToList();
             }
-               
-            
-            var user = _mapper.Map<Domain.Entities.User>(request.UserDTO);
-            user = await _userRepository.Add(user);
-            respose.Success = true;
-            respose.Message = "creation succesfil";
-            respose.Id= user.Id;
-            respose.Id= user.Id;
+            else
+            {
+                var user = _mapper.Map<Domain.Entities.User>(request.UserDTO);
+                user = await _userRepository.Add(user);
+                respose.Success = true;
+                respose.Message = "creation succesfil";
+                respose.Id = user.Id;
+            }
 
-            var email = new Email
-            {
-                To = "eli",
-                Subject="v",
-                Body="h",
-            };
-            try
-            {
-                await _emailSender.SendEmail(email);
-            } catch(Exception ex) 
-            {
-                //log
-            }
+            //var email = new Email
+            //{
+            //    To = "eli",
+            //    Subject = "v",
+            //    Body = "h",
+            //};
+            ////try
+            ////{
+            ////    await _emailSender.SendEmail(email);
+            ////}
+            ////catch (Exception ex)
+            ////{
+            ////    //log
+            ////}
 
 
             return respose;

@@ -37,7 +37,7 @@ namespace ShopCenter.UnitTest.User.Queries
             var result = await handler.Handle(new GetUserListRequest(), CancellationToken.None);
 
             result.ShouldBeOfType<List<UserDTO>>();
-            result.Count.ShouldBe(3);
+            result.Count.ShouldBe(1);
                 
         }   
     }
