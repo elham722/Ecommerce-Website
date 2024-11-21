@@ -7,7 +7,7 @@ namespace ShopCenter.MVC.Contracts
     {
         Task<List<UserVM>> GetUsers();
         Task<UserVM> GetUser(int id);
-        Task<Response<int>> CreateUser(UserVM user);
+        Task<Response<int>> CreateUser(CreateUserVM user);
         Task<Response<int>> UpdateUser(int id,UserVM user);
         Task<Response<int>> DeleteUser(int id);
     }

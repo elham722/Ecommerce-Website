@@ -30,5 +30,6 @@ namespace ShopCenter.Application.Features.User.Handlers.Commands
             await _userRepository.Delete(user);
            // return Unit.Value;
         }
+
     }
 }

@@ -6,11 +6,12 @@ using System.Reflection;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddHttpClient<IClient, Client>
-    (c=> c.BaseAddress = new Uri(builder.Configuration.GetSection("ApiAddress").Value));
-//builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
+             (c => c.BaseAddress = new Uri(builder.Configuration.GetSection("ApiAddress").Value));
+builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
 
 builder.Services.AddSingleton<ILocalStorageService,LocalStorageService>();
+builder.Services.AddScoped<IUserService, UserService>();
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 

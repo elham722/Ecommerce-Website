@@ -18,7 +18,7 @@ namespace ShopCenter.MVC.Services
             _localStorage = localStorage;
         }
 
-        public async Task<Response<int>> CreateUser(UserVM user)
+        public async Task<Response<int>> CreateUser(CreateUserVM user)
         {
             try
             {
