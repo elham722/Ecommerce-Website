@@ -36,7 +36,7 @@ namespace ShopCenter.MVC.Services
                 }
                 else
                 {
-                    foreach(var err in response.ValidationErrors)
+                    foreach (var err in response.ValidationErrors)
                     {
                         response.ValidationErrors += err + Environment.NewLine;
                     }
@@ -49,24 +49,43 @@ namespace ShopCenter.MVC.Services
             }
         }
 
-        public Task DeleteUser(UserVM user)
+        public async Task<Response<int>> DeleteUser(int id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                await _httpClient.UsersDELETEAsync(id);
+                return new Response<int> { Success = true };
+            }
+            catch (ApiException ex)
+            {
+                return ConvertApiExceptions<int>(ex);
+            }
         }
 
-        public Task<UserVM> GetUser(int id)
+        public async Task<UserVM> GetUser(int id)
         {
-            throw new NotImplementedException();
+            var user = await _httpClient.UsersGETAsync(id);
+            return _mapper.Map<UserVM>(user);
         }
 
-        public Task<List<UserVM>> GetUsers()
+        public async Task<List<UserVM>> GetUsers()
         {
-            throw new NotImplementedException();
+            var users = await _httpClient.UsersAllAsync();
+            return _mapper.Map<List<UserVM>>(users);
         }
 
-        public Task UpdateUser(UserVM user)
+        public async Task<Response<int>> UpdateUser(int id,UserVM user)
         {
-            throw new NotImplementedException();
+            try
+            {
+                UserDTO userDto = _mapper.Map<UserDTO>(user);
+                await _httpClient.UsersPUTAsync(id,userDto.ToString());
+                return new Response<int> {Success = true};
+            }
+            catch (ApiException ex)
+            {
+                return ConvertApiExceptions<int>(ex);
+            }
         }
     }
 }
