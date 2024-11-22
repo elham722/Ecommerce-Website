@@ -24,7 +24,7 @@ namespace ShopCenter.Identity
             services.Configure<JwtSettings>(configuration.GetSection("JwtSettings"));
             services.AddDbContext<ShopCenterIdentityDbContext>(options =>
             {
-                options.UseSqlServer(configuration.GetConnectionString("ShopCenterConnectionString "),
+                options.UseSqlServer(configuration.GetConnectionString("ShopCenterIdentityConnectionString"),
                     b => b.MigrationsAssembly(typeof(ShopCenterIdentityDbContext).Assembly.FullName)
                     );
             });
