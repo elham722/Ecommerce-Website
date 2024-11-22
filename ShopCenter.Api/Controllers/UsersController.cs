@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using ShopCenter.Application.DTOs.User;
 using ShopCenter.Application.Features.User.Requests.Commands;
@@ -10,6 +11,7 @@ namespace ShopCenter.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    //[Authorize]
     public class UsersController : ControllerBase
     {
         private readonly IMediator _mediator;
