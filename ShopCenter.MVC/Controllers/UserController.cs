@@ -17,6 +17,8 @@ namespace ShopCenter.MVC.Controllers
             _authenticateService = authenticateService;
         }
 
+        #region Login
+
         public IActionResult Login(string returnUrl = null)
         {
             return View();
@@ -35,6 +37,18 @@ namespace ShopCenter.MVC.Controllers
             ModelState.AddModelError("", "Login Failed. Please Try again.");
             return View(login);
         }
+
+        #endregion
+
+        #region Logout
+        [HttpPost]
+        public async Task<IActionResult> Logout()
+        {
+            await _authenticateService.Logout();
+            return LocalRedirect("/Users/Login");
+        }
+
+        #endregion
 
 
         // GET: UserController
