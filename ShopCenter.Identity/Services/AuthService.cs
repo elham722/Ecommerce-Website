@@ -72,9 +72,33 @@ namespace ShopCenter.Identity.Services
         }
         #endregion
 
-        public Task<AuthResponse> Login(AuthRequest request)
+        public async Task<AuthResponse> Login(AuthRequest request)
         {
-            throw new NotImplementedException();
+            var user = await _userManager.FindByEmailAsync(request.Email);
+            if (user == null)
+            {
+                throw new Exception($"user with {request.Email} not fount.");
+            }
+
+            var result = await _signInManager.PasswordSignInAsync(user.UserName, request.Password, false, lockoutOnFailure: false);
+
+            if (!result.Succeeded)
+            {
+                throw new Exception($"credentials for {request.Email} arent valid.");
+            }
+
+            JwtSecurityToken jwtSecurityToken = await GenerateToken(user);
+
+            AuthResponse response = new AuthResponse()
+            {
+                Id = user.Id,
+                Token = new JwtSecurityTokenHandler().WriteToken(jwtSecurityToken),
+                Email = user.Email,
+                UserName = user.UserName,
+            };
+
+            return response;
+
         }
 
         private async Task<JwtSecurityToken> GenerateToken(ApplicationUser user)
