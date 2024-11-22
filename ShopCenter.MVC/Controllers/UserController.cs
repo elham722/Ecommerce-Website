@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.BlazorIdentity.Pages;
 using ShopCenter.MVC.Contracts;
 using ShopCenter.MVC.Models;
 using ShopCenter.MVC.Services.Base;
@@ -9,11 +10,33 @@ namespace ShopCenter.MVC.Controllers
     public class UserController : Controller
     {
         private readonly IUserService _userService;
-
-        public UserController(IUserService userService)
+        private IAuthenticateService _authenticateService;
+        public UserController(IUserService userService, IAuthenticateService authenticateService)
         {
             _userService = userService;
+            _authenticateService = authenticateService;
         }
+
+        public IActionResult Login(string returnUrl = null)
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Login(LoginVM login, string returnUrl)
+        {
+            returnUrl ??= Url.Content("~/");
+            var isLoggedIn = await _authenticateService.Authenticate(login.Email, login.Passsword);
+            if (isLoggedIn)
+            {
+                return LocalRedirect(returnUrl);
+            }
+
+            ModelState.AddModelError("", "Login Failed. Please Try again.");
+            return View(login);
+        }
+
+
         // GET: UserController
         public async Task<ActionResult> Index()
         {
