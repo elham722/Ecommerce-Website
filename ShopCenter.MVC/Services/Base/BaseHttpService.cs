@@ -5,8 +5,8 @@ namespace ShopCenter.MVC.Services.Base
 {
     public class BaseHttpService
     {
-        private readonly IClient _client;
-        private readonly ILocalStorageService _localStorage;
+        protected readonly IClient _client;
+        protected readonly ILocalStorageService _localStorage;
 
         public BaseHttpService(IClient client,ILocalStorageService localStorage)
         {
